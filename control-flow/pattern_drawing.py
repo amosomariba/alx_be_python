@@ -1,28 +1,15 @@
-# Prompt for a single task
-task = input("Enter your task: ")
+# Prompt user for pattern size
+size = int(input("Enter the size of the pattern: "))
 
-# Prompt for the task's priority
-priority = input("Priority (high/medium/low): ").lower()
+# Initialize row counter
+row = 0
 
-# Ask if the task is time-bound
-time_bound = input("Is it time-bound? (yes/no): ").lower()
-
-# Process the task based on priority and time sensitivity
-match priority:
-    case 'high':
-        reminder = f"'{task}' is a high priority task"
-    case 'medium':
-        reminder = f"'{task}' is a medium priority task"
-    case 'low':
-        reminder = f"'{task}' is a low priority task"
-    case _:
-        reminder = "Invalid priority entered."
-
-# Modify the reminder if the task is time-bound
-if time_bound == 'yes' and priority in ['high', 'medium', 'low']:
-    reminder += " that requires immediate attention today!"
-elif time_bound == 'no' and priority in ['high', 'medium', 'low']:
-    reminder += ". Consider completing it when you have free time."
-
-# Provide a customized reminder
-print("Reminder:", reminder)
+# Use a while loop to iterate through each row
+while row < size:
+    # Use a for loop to print asterisks (*) side by side
+    for col in range(size):
+        print("*", end="")
+    # Print a newline character to move to the next row
+    print()
+    # Increment row counter
+    row += 1
