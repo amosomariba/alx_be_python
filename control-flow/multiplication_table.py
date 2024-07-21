@@ -6,4 +6,4 @@ for i in range(1, 10 + 1):
     result = number * i
     print(number, "*", i, "=", result)
     
-    print(f"{number} * {i} = {number * i}")
+print(f"{number} * {i} = {number * i}")
